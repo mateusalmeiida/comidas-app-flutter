@@ -15,7 +15,7 @@ class CategoriesScreen extends StatelessWidget {
         foregroundColor: Theme.of(context).colorScheme.onPrimary,
       ),
       body: GridView(
-        padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+        padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3 / 2,

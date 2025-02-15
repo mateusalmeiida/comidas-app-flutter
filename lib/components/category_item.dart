@@ -18,7 +18,7 @@ class CategoryItem extends StatelessWidget {
       child: Center(
           child: Text(
         category.title,
-        style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+        style: Theme.of(context).textTheme.titleSmall,
       )),
     );
   }
