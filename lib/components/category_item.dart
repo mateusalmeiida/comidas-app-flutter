@@ -9,7 +9,12 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: category.color,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [category.color.withValues(alpha: 0.6), category.color])),
       child: Center(
           child: Text(
         category.title,
