@@ -1,6 +1,7 @@
 import 'package:comidas/screens/categories_screen.dart';
 import 'package:flutter/material.dart';
 import './screens/categories_meals_screen.dart';
+import 'utils/app_routes.dart';
 
 void main() {
   runApp(MealApp());
@@ -35,9 +36,11 @@ class MealApp extends StatelessWidget {
               fontWeight: FontWeight.w700),
         ),
       ),
-      home: CategoriesScreen(),
       routes: {
-        '/categories-meals': (ctx) {
+        AppRoutes.HOME: (ctx) {
+          return CategoriesScreen();
+        },
+        AppRoutes.CATEGORIES_MEALS: (ctx) {
           return CategoriesMealsScreen();
         }
       },
