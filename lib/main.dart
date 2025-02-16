@@ -17,11 +17,12 @@ class MealApp extends StatelessWidget {
       title: 'MealApp',
       theme: ThemeData(
         textTheme: TextTheme(
-            bodySmall: TextStyle(fontFamily: 'Raleway'),
-            titleSmall: TextStyle(
-                color: Theme.of(context).colorScheme.onPrimary,
-                fontSize: MediaQuery.of(context).textScaler.scale(20),
-                fontFamily: 'RobotoCondensed')),
+          bodySmall: TextStyle(fontFamily: 'Raleway'),
+          titleSmall: TextStyle(
+              color: Theme.of(context).colorScheme.onPrimary,
+              fontSize: MediaQuery.of(context).textScaler.scale(20),
+              fontFamily: 'RobotoCondensed'),
+        ),
         colorScheme: ColorScheme.fromSeed(
             primary: Colors.pink,
             onPrimary: Colors.white,
