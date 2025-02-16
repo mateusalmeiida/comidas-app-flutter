@@ -1,25 +1,48 @@
 import 'package:flutter/material.dart';
 import '../models/category.dart';
+import '../screens/categories_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final Category category;
 
   const CategoryItem({super.key, required this.category});
 
+  void _selectCategoy(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return CategoriesMealsScreen(
+            category: category,
+          );
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [category.color.withValues(alpha: 0.6), category.color])),
-      child: Center(
-          child: Text(
-        category.title,
-        style: Theme.of(context).textTheme.titleSmall,
-      )),
+    return InkWell(
+      onTap: () {
+        _selectCategoy(context);
+      },
+      splashColor: Theme.of(context).colorScheme.primary,
+      borderRadius: BorderRadius.circular(15),
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  category.color.withValues(alpha: 0.55),
+                  category.color
+                ])),
+        child: Center(
+            child: Text(
+          category.title,
+          style: Theme.of(context).textTheme.titleSmall,
+        )),
+      ),
     );
   }
 }
