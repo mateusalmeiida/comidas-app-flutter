@@ -17,36 +17,32 @@ class MealApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'MealApp',
       theme: ThemeData(
-          textTheme: TextTheme(
-            bodySmall: TextStyle(fontFamily: 'Raleway'),
-            titleSmall: TextStyle(
-                color: Colors.black,
-                fontSize: MediaQuery.of(context).textScaler.scale(22),
-                fontFamily: 'RobotoCondensed'),
-            titleMedium: TextStyle(
-                color: Theme.of(context).colorScheme.onPrimary,
-                fontSize: MediaQuery.of(context).textScaler.scale(20),
-                fontFamily: 'RobotoCondensed'),
-          ),
-          colorScheme: ColorScheme.fromSeed(
-              primary: Colors.pink,
-              onPrimary: Colors.white,
-              secondary: Colors.amber,
-              seedColor: Colors.amber),
-          appBarTheme: AppBarTheme(
-            backgroundColor: Colors.pink,
-            foregroundColor: Colors.white,
-            centerTitle: true,
-            titleTextStyle: TextStyle(
-                fontFamily: 'Raleway',
-                fontSize: MediaQuery.of(context).textScaler.scale(18),
-                fontWeight: FontWeight.w700),
-          ),
-          tabBarTheme: TabBarTheme(
-            labelColor: Colors.white,
-            indicatorColor: Colors.white,
-            unselectedLabelColor: Colors.pink[200],
-          )),
+        textTheme: TextTheme(
+          bodySmall: TextStyle(fontFamily: 'Raleway'),
+          titleSmall: TextStyle(
+              color: Colors.black,
+              fontSize: MediaQuery.of(context).textScaler.scale(22),
+              fontFamily: 'RobotoCondensed'),
+          titleMedium: TextStyle(
+              color: Theme.of(context).colorScheme.onPrimary,
+              fontSize: MediaQuery.of(context).textScaler.scale(20),
+              fontFamily: 'RobotoCondensed'),
+        ),
+        colorScheme: ColorScheme.fromSeed(
+            primary: Colors.pink,
+            onPrimary: Colors.white,
+            secondary: Colors.amber,
+            seedColor: Colors.amber),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.pink,
+          foregroundColor: Colors.white,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+              fontFamily: 'Raleway',
+              fontSize: MediaQuery.of(context).textScaler.scale(18),
+              fontWeight: FontWeight.w700),
+        ),
+      ),
       routes: {
         AppRoutes.HOME: (ctx) {
           return TabsScreen();
