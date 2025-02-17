@@ -33,7 +33,7 @@ class CategoryItem extends StatelessWidget {
         child: Center(
             child: Text(
           category.title,
-          style: Theme.of(context).textTheme.titleSmall,
+          style: Theme.of(context).textTheme.titleMedium,
         )),
       ),
     );
