@@ -27,7 +27,7 @@ class CategoryItem extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  category.color.withValues(alpha: 0.55),
+                  category.color.withValues(alpha: 0.6),
                   category.color
                 ])),
         child: Center(
