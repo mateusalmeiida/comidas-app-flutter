@@ -3,6 +3,7 @@ import './screens/categories_meals_screen.dart';
 import 'utils/app_routes.dart';
 import './screens/meal_detail_screen.dart';
 import './screens/tabs_screen.dart';
+import './screens/settings_screen.dart';
 
 void main() {
   runApp(MealApp());
@@ -52,6 +53,9 @@ class MealApp extends StatelessWidget {
         },
         AppRoutes.MEAL_DETAIL: (ctx) {
           return MealDetailScreen();
+        },
+        AppRoutes.SETTINGS: (ctx) {
+          return SettingsScreen();
         }
       },
     );
