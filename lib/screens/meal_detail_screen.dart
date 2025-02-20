@@ -2,7 +2,12 @@ import 'package:comidas/models/meal.dart';
 import 'package:flutter/material.dart';
 
 class MealDetailScreen extends StatelessWidget {
-  const MealDetailScreen({super.key});
+  final bool Function(Meal) isFavoriteFunction;
+  final ValueChanged<Meal> toogleFavorite;
+  const MealDetailScreen(
+      {required this.isFavoriteFunction,
+      required this.toogleFavorite,
+      super.key});
 
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
@@ -31,6 +36,8 @@ class MealDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Meal meal = ModalRoute.of(context)!.settings.arguments as Meal;
+
+    final bool _isFavorite = isFavoriteFunction(meal);
 
     return Scaffold(
       appBar: AppBar(
@@ -85,8 +92,11 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        foregroundColor: _isFavorite
+            ? Theme.of(context).colorScheme.primary
+            : Colors.black54,
         onPressed: () {
-          Navigator.of(context).pop(meal.title);
+          toogleFavorite(meal);
         },
         child: Icon(Icons.star),
       ),
