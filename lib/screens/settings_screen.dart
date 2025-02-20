@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import '../models/settings.dart';
 
 class SettingsScreen extends StatefulWidget {
-  const SettingsScreen({super.key});
+  final ValueChanged<Settings> onSettingsChanged;
+  final Settings settings;
+  const SettingsScreen(
+      {required this.settings, required this.onSettingsChanged, super.key});
 
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
@@ -20,11 +23,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
       title: Text(title),
       subtitle: Text(subtitle),
       value: value,
-      onChanged: onChanged,
+      onChanged: (value) {
+        onChanged(value);
+        widget.onSettingsChanged(widget.settings);
+      },
     );
   }
-
-  var settings = Settings();
 
   @override
   Widget build(BuildContext context) {
@@ -48,31 +52,31 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 _createSwitch(
                     'Sem Glúten',
                     'Exibir apenas refeições sem glúten',
-                    settings.isGlutenFree, (value) {
+                    widget.settings.isGlutenFree, (value) {
                   setState(() {
-                    settings.isGlutenFree = value;
+                    widget.settings.isGlutenFree = value;
                   });
                 }),
                 _createSwitch(
                     'Sem Lactose',
                     'Exibir apenas refeições sem lactose',
-                    settings.isLactoseFree, (value) {
+                    widget.settings.isLactoseFree, (value) {
                   setState(() {
-                    settings.isLactoseFree = value;
+                    widget.settings.isLactoseFree = value;
                   });
                 }),
                 _createSwitch(
                     'Vegetariano',
                     'Exibir apenas refeições vegetarianas',
-                    settings.isVegetarian, (value) {
+                    widget.settings.isVegetarian, (value) {
                   setState(() {
-                    settings.isVegetarian = value;
+                    widget.settings.isVegetarian = value;
                   });
                 }),
                 _createSwitch('Vegano', 'Exibir apenas refeições veganas',
-                    settings.isVegan, (value) {
+                    widget.settings.isVegan, (value) {
                   setState(() {
-                    settings.isVegan = value;
+                    widget.settings.isVegan = value;
                   });
                 }),
               ],
