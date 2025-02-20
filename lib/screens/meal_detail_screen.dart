@@ -92,13 +92,10 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        foregroundColor: _isFavorite
-            ? Theme.of(context).colorScheme.primary
-            : Colors.black54,
         onPressed: () {
           toogleFavorite(meal);
         },
-        child: Icon(Icons.star),
+        child: Icon(_isFavorite ? Icons.star : Icons.star_border),
       ),
     );
   }
